@@ -10,13 +10,13 @@ The program will continue its execution until a user enters a sentinel value -1.
 while True:
     try:
         salary = int(input("Enter sales in rupees(-1 to end): ").strip())
+        if salary == -1 :
+            exit
         if salary:
+         # as we divide 100 / 4 = 25 is 25% of 100  then we divide 100 / 11 = 9 which means that it will give 9%
             salepercent = salary / (11)    
             comission = 200 + int(salepercent)
             print(f"Salary is Rs. {comission}")
-        else:
-            print("Not int")
-        if salary == -1 :
-            exit
+        
     except ValueError:
         print("Not a Integer!")   
