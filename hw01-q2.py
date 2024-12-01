@@ -14,7 +14,7 @@ while True:
             exit
         if salary:
          # as we divide 100 / 4 = 25 is 25% of 100  then we divide 100 / 11 = 9 which means that it will give 9%
-            salepercent = salary / (11)    
+            salepercent = salary * 0.09  
             comission = 200 + int(salepercent)
             print(f"Salary is Rs. {comission}")
         
