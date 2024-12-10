@@ -17,6 +17,7 @@ def main():
         console.print("1. Add Patient Data", style="cyan")
         console.print("2. View Patient Data", style="cyan")
         console.print("3. Exit", style="cyan")
+        console.print("4. User Guide", style="cyan")
         choice = input("Choose an option: ").strip()
 
         if choice == "1":
@@ -26,6 +27,8 @@ def main():
         elif choice == "3":
             console.print("Goodbye!", style="green")
             break
+        elif choice == "4":
+            userGuide()
         else:
             console.print("Invalid choice. Try again.", style="red")
 
@@ -41,13 +44,14 @@ def PatientIntro():
             name = input("Patient name: ").lower().strip()
             # this will allow user to enter name having about two whitspaces in it
                 # ^
-                # |------------v-------------v---------v
+                # |----------v-----
+                # ----v---------v
             if re.search(r"^([a-z]{3,8}) ?([a-z]+)* ?([a-z]+)*$", name):
-                #               ^
-                # name(average firstname  have 3 to 8 length)
                 age = input("Patient Age: ").strip()
-                # first ensure that input is between 0 to 9 with infinite number of repetitions
+                # first ensure that input is between 0 to 9 with infinite number of repitation
                 if re.search(r"^[0-9]+$", age):
+                    # secondly this check if first one is true
+                    # now condition will checked between 1 to 100
                     if (int(age) > 0) and (int(age) <= 100):
                         gender = input("Gender(male/female/neutral): ").lower().strip()
                         if gender in lst:
@@ -83,6 +87,15 @@ def viewData():
 
     except FileNotFoundError:
         console.print("No data found. Add some patient records first.", style="red")
+
+def userGuide():
+    print("<--------------------------------------------------------------------------------------->")
+    console.print("User Guide",style="green")
+    print("1. Add Data:\n  Add Data option will add data by pressing only 1\n  first it will take 'Name'\n  secondly it will take 'Age'\n  third one will take 'Gender'\n  lastly it will take 'Disease name'")
+    print("2. view Data:\n  view Data option will show data(Patient Records) by pressing only 2")
+    print("3. Exit:\n  exit option will Exit by pressing only 3")
+    print("4. User Guide:\n  User Guide option will guidance to use the program by pressing only 4")
+    print("<--------------------------------------------------------------------------------------->")
 
 if __name__ == "__main__":
     main()
