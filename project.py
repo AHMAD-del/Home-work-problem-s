@@ -72,11 +72,9 @@ def PatientIntro():
 
 
 def insertingData(introLst):
-    count = 1
     with open("data.csv", "a", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow(count + introLst)
-        count += 1
+        writer.writerow(introLst)
 
 def viewData():
     try:
