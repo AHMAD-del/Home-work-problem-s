@@ -1,3 +1,6 @@
+"""
+program for adding or viewing patient data
+"""
 import csv
 from rich.console import Console
 from rich.traceback import install
