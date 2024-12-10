@@ -94,7 +94,7 @@ def userGuide():
     print("1. Add Data:\n  Add Data option will add data by pressing only 1\n  first it will take 'Name'\n  secondly it will take 'Age'\n  third one will take 'Gender'\n  lastly it will take 'Disease name'")
     print("2. view Data:\n  view Data option will show data(Patient Records) by pressing only 2")
     print("3. Exit:\n  exit option will Exit by pressing only 3")
-    print("4. User Guide:\n  User Guide option will guidance to use the program by pressing only 4")
+    print("4. User Guide:\n  User Guide option will show guidance to use the program by pressing only 4")
     print("<--------------------------------------------------------------------------------------->")
 
 if __name__ == "__main__":
