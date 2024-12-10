@@ -2,6 +2,7 @@
 program for adding or viewing patient data
 """
 import csv
+from cs50 import get_int
 from rich.console import Console
 from rich.traceback import install
 import re
@@ -31,30 +32,46 @@ def main():
 def PatientIntro():
     introLst = []
     lst = ["male", "female", "neutral"]
+    diseases = [
+        "flu", "diabetes", "hypertension", "asthma", "arthritis", "tuberculosis", "heart disease", "pneumonia", "malaria"
+    ]
 
     while True:
         try:
             name = input("Patient name: ").lower().strip()
-            if re.search(r"^[a-z]+ ?([a-z]+)?$", name):
+            # this will allow user to enter name having about two whitspaces in it
+                # ^
+                # |----------v-----
+                # ----v---------v
+            if re.search(r"^([a-z]{3,8}) ?([a-z]+)* ?([a-z]+)*$", name):
                 age = input("Patient Age: ").strip()
+                # first ensure that input is between 0 to 9 with infinite number of repetitions
                 if re.search(r"^[0-9]+$", age):
-                    gender = input("Patient Gender: ").lower().strip()
-                    if gender in lst:
-                        disease = input("Patient Disease: ").lower().strip()
-                        introLst.append(name)
-                        introLst.append(age)
-                        introLst.append(gender)
-                        introLst.append(disease)
-                        insertingData(introLst)
-                        console.print("Data added successfully!", style="green")
-                        break
+                    if (int(age) > 0) and (int(age) <= 100):
+                        gender = input("Gender(male/female/neutral): ").lower().strip()
+                        if gender in lst:
+                            disease = input("Patient Disease: ").lower().strip()
+                            if disease in diseases:
+                                introLst.append(name)
+                                introLst.append(age)
+                                introLst.append(gender)
+                                introLst.append(disease)
+                                insertingData(introLst)
+                                console.print("Data added successfully!", style="green")
+                                break
+
         except:
-            console.print(f"Error!", style="red")
+            userinput = input("Press 3 for Exit: ").strip()
+            if userinput == "3":
+                break
+
 
 def insertingData(introLst):
+    count = 1
     with open("data.csv", "a", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow(introLst)
+        writer.writerow(count + introLst)
+        count += 1
 
 def viewData():
     try:
