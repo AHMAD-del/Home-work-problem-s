@@ -41,9 +41,10 @@ def PatientIntro():
             name = input("Patient name: ").lower().strip()
             # this will allow user to enter name having about two whitspaces in it
                 # ^
-                # |----------v-----
-                # ----v---------v
+                # |------------v-------------v---------v
             if re.search(r"^([a-z]{3,8}) ?([a-z]+)* ?([a-z]+)*$", name):
+                #               ^
+                # name(average firstname  have 3 to 8 length)
                 age = input("Patient Age: ").strip()
                 # first ensure that input is between 0 to 9 with infinite number of repetitions
                 if re.search(r"^[0-9]+$", age):
