@@ -48,7 +48,7 @@ def PatientIntro():
                 # ^
                 # |------------v-------------v
             if re.search(r"^([a-z]{3,15}) ?([a-z]{3,15})*$", name):
-                age = input("Patient Age: ").strip()
+                age = input("Patient Age(1 to 100): ").strip()
                 # first ensure that input is between 0 to 9 with infinite number of repitation
                 if re.search(r"^[0-9]+$", age):
                     # secondly this check if first one is true
