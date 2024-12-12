@@ -72,8 +72,7 @@ def PatientIntro():
                                 break
 
         except:
-            userinput = input("Press 3 for Exit: ").strip()
-            if userinput == "3":
+            if input("Press 3 for Exit: ").strip() == "3":
                 break
 
 
