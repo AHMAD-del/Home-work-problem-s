@@ -8,7 +8,7 @@ import re
 from tabulate import tabulate
 console = Console()
 install()
-# making global variable because local variable will constant every time
+# making global variable because local variable will constant every time function is called
 id = 1
 
 def main():
