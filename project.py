@@ -8,6 +8,8 @@ import re
 from tabulate import tabulate
 console = Console()
 install()
+# making global variable because local variable will constant every time
+id = 1
 
 def main():
     console.print("Welcome!", style="green")
@@ -33,8 +35,9 @@ def main():
             console.print("Invalid choice. Try again.", style="red")
 
 def PatientIntro():
+    # global variable for patient id
+    global id
     introLst = []
-    id = 1
     lst = ["male", "female", "neutral"]
 
     diseases = [
@@ -48,7 +51,7 @@ def PatientIntro():
                 # ^
                 # |------------v-------------v
             if re.search(r"^([a-z]{3,15}) ?([a-z]{3,15})*$", name):
-                age = input("Patient Age(1 to 100): ").strip()
+                age = input("Patient Age: ").strip()
                 # first ensure that input is between 0 to 9 with infinite number of repitation
                 if re.search(r"^[0-9]+$", age):
                     # secondly this check if first one is true
@@ -59,13 +62,13 @@ def PatientIntro():
                             disease = input("Patient Disease: ").lower().strip()
                             if disease in diseases:
                                 introLst.append(id)
-                                id += 1
                                 introLst.append(name)
                                 introLst.append(age)
                                 introLst.append(gender)
                                 introLst.append(disease)
                                 insertingData(introLst)
                                 console.print("Data added successfully!", style="green")
+                                id += 1
                                 break
 
         except:
