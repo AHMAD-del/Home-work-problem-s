@@ -1,0 +1,70 @@
+"""
+  ADT: Employee 
+Write a class named Employee for which each object can hold information about a particular employee: 
+1. The class should have following four private data members:
+  
+1. A string named name that holds the employee’s name. 
+2. An integer named id that holds the employee’s ID number. 
+3. A string named department that holds the name of the department where the employee works. 
+4. A string named position that holds the employee’s job title. """
+  
+                Here is the code |
+                                 v
+
+  class Employee:
+      def __init__(self, name='', id='', department='', position=''):
+        self.name = name
+        self.id = id
+        self.department = department
+        self.position = position
+
+  
+"""
+  2. Provide the implementation of following constructors and a destructor:
+
+  1. A constructor that accepts employee’s name, employee’s ID number, department, and position as arguments and 
+assigns them to the appropriate member variables. 
+2. A constructor that accepts employee’s name and ID number as arguments and assigns them to the appropriate member 
+variables. The department and position fields should be assigned an empty string (""). 
+3. A default constructor that assigns empty string ("") to the name, department, and position member variables, and 0
+to the id member variable. 
+4. A copy constructor to initialize an employee’s object with already existing object. 
+5. A destructor that do nothing except displaying a simple message “Destructor executed…” on the screen. """
+  
+"""  
+3.Provide the implementation of properties methods (get/set) for all the data members (name, id, department and position) of 
+the class. """
+
+
+  
+  
+"""  
+4. Provide the implementation of following member functions 
+
+
+1. setInfo method accepts employee’s name, employee’s ID number, department, and position as arguments and assigns 
+them to the appropriate member variables. 
+2. getInfo method to initialize the data of an employee taken from the user. 
+3. putInfo method to display the information of a particular employee. 
+5. Once you have written the class, write main function and test its functionality a
+  """
+   def setinfo(self):
+          global lst
+          self.name = input("Enter Name: ").strip().title()
+          self.id = input("Enter ID: ").strip()
+          self.department = input("Ener Department: ").strip().title()
+          self.position = input("Enter Position: ").strip().title()
+          lst.append({'name': self.name, 'id': self.id, 'department': self.department, 'position': self.position})
+  
+    def putinfo(self):
+          global lst
+          print(lst)
+
+
+  
+                
+def main():
+    
+    Emp = Employee()
+    Emp.setinfo()
+    Emp.putinfo()
