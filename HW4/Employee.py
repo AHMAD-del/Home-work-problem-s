@@ -33,8 +33,44 @@ class Employee:
     
 
 # 3. Provide the implementation of properties methods (get/set) for all the data members (name, id, department and position) of the class. 
+    @property
+    def getname(self):
+        return self.name
 
+    @getname.setter
+    def getname(self, name):
+        if not name:
+            raise ValueError("Missing Name!")
+        self.name    
+    @property
+    def getid(self):
+        return self.id
 
+    @getid.setter
+    def getid(self, id):
+        if not id: 
+            raise ValueError("Missing ID!")
+        self.id = id
+
+    @property
+    def getdepatment(self):
+        return self.department        
+
+    @getdepatment.setter
+    def getdepartment(self, department):
+        if not department:
+            raise ValueError("Missing Department!")
+        self.department = department
+
+    @property
+    def getposition(self):
+        return self.position
+
+    @getposition.setter
+    def getposition(self, position):
+        if not position:
+            raise ValueError("Missing Position!")
+        self.position = position    
 # 4. Provide the implementation of following member functions 
 
     # a. setInfo method accepts employee’s name, employee’s ID number, department, and position as arguments and assigns 
@@ -63,5 +99,6 @@ def main():
     Emp.putinfo()
 
 
+
 if __name__ == "__main__":
-  main()
+    main()
