@@ -8,8 +8,9 @@ For example,
 {22,33,44,55,66,77,88,99} into {66,77,88,99,22,33,44,55}"""
 
 def rotate(lst:list[int], size:int, positions:int) -> list[int]:
-    newlst = lst[-positions:] + lst[:-positions]
-    return newlst
+    if len(lst) == size:
+        newlst = lst[-positions:] + lst[:-positions]
+        return newlst
 
 
 result = rotate([1,2,3,4,5,6,7,8,9], 9, 1)
