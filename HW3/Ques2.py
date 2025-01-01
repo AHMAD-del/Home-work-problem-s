@@ -7,12 +7,8 @@ For example,
 2. The call rotate(a,8,4) would transform the array 
 {22,33,44,55,66,77,88,99} into {66,77,88,99,22,33,44,55}"""
 
-def rotate(lst,len, positions):
-    newlst = []
-    for i in range(len):
-        newlst.append(lst[-positions])
-        # lst.remove(-positions)
-        positions -= 1
+def rotate(lst:list[int], size:int, positions:int) -> list[int]:
+    newlst = lst[-positions:] + lst[:-positions]
     return newlst
 
 
