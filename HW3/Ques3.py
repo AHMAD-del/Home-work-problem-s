@@ -7,11 +7,11 @@ For example,
 2. a contains {1, 2, 3, 4, 5} and array b contains {5, 4, 3, 2} then the addition is not possible so return NULL"""
 
 def add(lst1, lst2):
-    if len(lst1) and len(lst2):
+    if len(lst1) == len(lst2):
         finalLst = []
         for i in range(len(lst1)):
             finalLst.append(lst1[i] + lst2[i])
-    return finalLst
+        return finalLst
 
 result = add([1, 2, 3, 4, 5],[5, 4, 3, 2, 1])
 print(result)
