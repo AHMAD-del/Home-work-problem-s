@@ -6,7 +6,7 @@ For example,
 1. a contains {1, 2, 3, 4, 5} and array b contains {5, 4, 3, 2, 1} then the resultant array is {6, 6, 6, 6, 6}
 2. a contains {1, 2, 3, 4, 5} and array b contains {5, 4, 3, 2} then the addition is not possible so return NULL"""
 
-def add(lst1, lst2):
+def add(lst1:list[int], lst2:list[int]) -> list[int]:
     if len(lst1) == len(lst2):
         finalLst = []
         for i in range(len(lst1)):
